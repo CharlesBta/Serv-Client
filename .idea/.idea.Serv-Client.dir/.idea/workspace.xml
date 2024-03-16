@@ -7,7 +7,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59653710-ca05-4505-8c92-f15cde29cbaf" name="Changes" comment="" />
+    <list default="true" id="59653710-ca05-4505-8c92-f15cde29cbaf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Serv-Client.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Serv-Client.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/Client/client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/bin/Debug/net8.0/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Server/bin/Debug/net8.0/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/bin/Debug/net8.0/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Server/bin/Debug/net8.0/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/net8.0/Server.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/net8.0/Server.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/net8.0/Server.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/net8.0/Server.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/net8.0/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/net8.0/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/net8.0/Server.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/net8.0/Server.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/net8.0/Server.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/net8.0/Server.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/net8.0/ref/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/net8.0/ref/Server.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/obj/Debug/net8.0/refint/Server.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Server/obj/Debug/net8.0/refint/Server.dll" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700556862248</updated>
       <workItem from="1710589562071" duration="52000" />
-      <workItem from="1710589691890" duration="678000" />
+      <workItem from="1710589691890" duration="3722000" />
     </task>
     <servers />
   </component>
