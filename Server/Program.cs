@@ -2,6 +2,7 @@
 using System.Net.Sockets;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using Microsoft.VisualBasic;
 
 
@@ -18,11 +19,12 @@ void sendMessage(object clientSocket)
             Thread.Sleep(2000);
             while (true)
             {
-                var buffer = Encoding.UTF8.GetBytes(i.ToString());
+                var json = $"{{\"value\" : \"{i}\"}}";
+                var buffer = Encoding.UTF8.GetBytes(json);
                 try
                 {
                     socket.Send(buffer);
-                    Console.WriteLine($"Message envoyé : {i}");
+                    Console.WriteLine($"Message envoyé : {json} à {endpoint}");
                     i++;
                 }
                 catch

@@ -1,23 +1,24 @@
 import socket
 import threading
-
+import json
 import pygame
 
 i = 0
+received_messages = {}
 
 def receive_messages(server_ip, server_port):
+    global i, received_messages
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         server_address = (server_ip, server_port)
         print(f"Connexion au serveur {server_address}")
         sock.connect(server_address)
-
         try:
             while True:
                 data = sock.recv(1024)
                 if data:
-                    global i
-                    i = int(data.decode())
-                    print("Message reçu:", data.decode())
+                    received_messages = json.loads(data.decode())
+                    i = int(received_messages["value"])
+                    print("Message reçu:", received_messages["value"])
                 else:
                     print("Connexion fermée par le serveur.")
                     break
@@ -29,41 +30,42 @@ def receive_messages(server_ip, server_port):
 
 SERVER_IP = '127.0.0.1'
 SERVER_PORT = 2345
-# receive_messages(SERVER_IP, SERVER_PORT)
+#receive_messages(SERVER_IP, SERVER_PORT)
+
+def run():
+    pygame.init()
+
+    screen_width = 640
+    screen_height = 480
+    screen = pygame.display.set_mode((screen_width, screen_height))
+
+    black = (0, 0, 0)
+    white = (255, 255, 255)
+
+    font = pygame.font.Font(None, 74)
 
 
-pygame.init()
+    running = True
 
-screen_width = 640
-screen_height = 480
-screen = pygame.display.set_mode((screen_width, screen_height))
+    clock = pygame.time.Clock()
 
-black = (0, 0, 0)
-white = (255, 255, 255)
+    client = threading.Thread(target=receive_messages, args=(SERVER_IP, SERVER_PORT))
+    client.start()
 
-font = pygame.font.Font(None, 74)
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
 
+        screen.fill(black)
 
-running = True
+        text = font.render("Value: "+str(i), True, white)
+        screen.blit(text, (screen_width // 2 - text.get_width() // 2, screen_height // 2 - text.get_height() // 2))
 
-clock = pygame.time.Clock()
+        pygame.display.flip()
 
-client = threading.Thread(target=receive_messages, args=(SERVER_IP, SERVER_PORT))
-client.start()
+        clock.tick(60)
 
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+    pygame.quit()
 
-    screen.fill(black)
-
-    text = font.render("Value: "+str(i), True, white)
-    screen.blit(text, (screen_width // 2 - text.get_width() // 2, screen_height // 2 - text.get_height() // 2))
-
-    pygame.display.flip()
-
-    clock.tick(60)
-
-pygame.quit()
-
+run()
